@@ -1,0 +1,12 @@
+{
+  "name": "asana",
+  "version": "0.1.0",
+  "description": "Connect Cursor to Asana. Create tasks, update projects, search your workspace, and manage work — directly from the editor.",
+  "author": {
+    "name": "Asana"
+  },
+  "repository": "https://github.com/Asana/cursor-marketplace-plugin.git",
+  "keywords": ["asana", "mcp", "productivity", "project management", "tasks"],
+  "license": "MIT",
+  "logo": "assets/logo.svg"
+}
