@@ -1,34 +1,43 @@
-# Cursor plugin template
+# Asana Plugin for Cursor
 
-Build and publish Cursor Marketplace plugins from a single repo.
+Manage your Asana tasks, projects, and portfolios directly from Cursor — no context switching required.
 
-Two starter plugins are included:
+## What this plugin does
 
-- **starter-simple**: rules and skills only
-- **starter-advanced**: rules, skills, agents, commands, hooks, MCP, and scripts
+- Connects Cursor to the [Asana MCP server](https://developers.asana.com/docs/mcp)
+- Gives the Cursor agent skills for setting up and using the Asana integration
+- Adds guardrails to prevent accidental destructive actions
 
-## Getting started
+## Prerequisites
 
-[Use this template](https://github.com/cursor/plugin-template/generate) to create a new repository, then customize:
+You need an Asana account and a registered Asana OAuth app.
 
-1. `.cursor-plugin/marketplace.json`: set marketplace `name`, `owner`, and `metadata`.
-2. `plugins/*/.cursor-plugin/plugin.json`: set `name` (lowercase kebab-case), `displayName`, `author`, `description`, `keywords`, `license`, and `version`.
-3. Replace placeholder rules, skills, agents, commands, hooks, scripts, and logos.
+1. Go to https://app.asana.com/0/my-apps
+2. Create a new app
+3. Add `cursor://anysphere.cursor-mcp/oauth/callback` as a redirect URI
+4. Copy your **Client ID** and **Client Secret**
 
-To add more plugins, see `docs/add-a-plugin.md`.
+## Setup
 
-## Single plugin vs multi-plugin
+Add these to your shell profile (`~/.zshrc`, `~/.bashrc`, etc.):
 
-This template defaults to **multi-plugin** (multiple plugins in one repo).
+```bash
+export ASANA_CLIENT_ID="your_client_id"
+export ASANA_CLIENT_SECRET="your_client_secret"
+```
 
-For a **single plugin**, move your plugin folder contents to the repository root, keep one `.cursor-plugin/plugin.json`, and remove `.cursor-plugin/marketplace.json`.
+Then restart Cursor. The agent will guide you through the rest.
 
-## Submission checklist
+## Install
 
-- Each plugin has a valid `.cursor-plugin/plugin.json`.
-- Plugin names are unique, lowercase, and kebab-case.
-- `.cursor-plugin/marketplace.json` entries map to real plugin folders.
-- All frontmatter metadata is present in rule, skill, agent, and command files.
-- Logos are committed and referenced with relative paths.
-- `node scripts/validate-template.mjs` passes.
-- Repository link is ready for submission to the Cursor team (Slack or `kniparko@anysphere.com`).
+Install from the [Cursor Marketplace](https://cursor.com/marketplace) — search for "Asana".
+
+## Links
+
+- [Asana MCP documentation](https://developers.asana.com/docs/connecting-mcp-clients-to-asanas-v2-server)
+- [Asana Developer Console](https://app.asana.com/0/my-apps)
+- [Asana API reference](https://developers.asana.com/reference)
+
+## License
+
+MIT

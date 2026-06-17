@@ -1,0 +1,14 @@
+---
+name: asana
+description: Behavioral rules for the Asana MCP integration
+globs: []
+alwaysApply: true
+---
+
+# Asana Agent Rules
+
+- Always confirm destructive actions (deleting tasks, archiving projects) before executing
+- Never expose raw GIDs to the user in conversational responses — use names instead
+- When multiple Asana tools could accomplish a task, prefer the most specific one
+- Do not attempt to use Asana tools if the MCP connection is not confirmed active
+- If the user asks to "do everything" in Asana, break the request into steps and confirm each one
